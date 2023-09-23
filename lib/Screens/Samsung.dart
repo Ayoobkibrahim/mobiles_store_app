@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../Provider/Cart provider.dart';
+import '../Provider/Gadgets Cart Provider.dart';
 import '../components/main title.dart';
-import 'card.dart';
+import '../Card/PhoneCard.dart';
 
 class SamsungItems extends StatelessWidget {
   SamsungItems({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var Samsunghome = context.watch<CartProvider>().Samsunghome;
-    var Samsungcart = context.watch<CartProvider>().cartall;
+    var Samsunghome = context.watch<GadgetCartProvider>().Samsunghome;
+    var Samsungcart = context.watch<GadgetCartProvider>().cartall;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -23,7 +22,7 @@ class SamsungItems extends StatelessWidget {
           backgroundColor: Colors.black,
           onPressed: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return CartPage();
+              return PhoneCartPage();
             },
           )),
           child: Wrap(
@@ -44,7 +43,7 @@ class SamsungItems extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "SAMSUNG",
+                  "SAMSUNG PHONES",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -64,7 +63,7 @@ class SamsungItems extends StatelessWidget {
                         ImagePath: samsung.image,
                         color: Colors.green,
                         onPressed: () {
-                          context.read<CartProvider>().addToCart(samsung);
+                          context.read<GadgetCartProvider>().addToCart(samsung);
                         },
                       );
                     })

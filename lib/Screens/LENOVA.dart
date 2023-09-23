@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mobiles_store_app/Card/laptopCard.dart';
 import 'package:provider/provider.dart';
 import '../Provider/Gadgets Cart Provider.dart';
 import '../components/main title.dart';
-import '../Card/PhoneCard.dart';
 
-
-class XiaomiItems extends StatelessWidget {
-  XiaomiItems({Key? key}) : super(key: key);
+class LenovaItems extends StatelessWidget {
+  LenovaItems({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
-    var Xiaomihome = context.watch<GadgetCartProvider>().Xiaomihome;
-    var Xiaomicart = context.watch<GadgetCartProvider>().cartall;
+    var Lenovahome = context.watch<GadgetCartProvider>().Lenovahome;
+    var Lenovacart = context.watch<GadgetCartProvider>().cartall;
 
     return SafeArea(
       child: Scaffold(
@@ -25,16 +24,16 @@ class XiaomiItems extends StatelessWidget {
           backgroundColor: Colors.black,
           onPressed: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return PhoneCartPage();
+              return laptopCartPage();
             },
           )),
-          child: Wrap(
+          child:  Wrap(
               children: [
                 Icon(
                   Icons.shopping_cart_sharp,
                   color: Colors.white,
                 ),
-                Text("${Xiaomicart.length}")
+                Text("${Lenovacart.length}")
               ]
           ),
         ),
@@ -46,28 +45,28 @@ class XiaomiItems extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "XIAOMI PHONES",
+                  "LENOVA LAPTOPS",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 GridView.builder(
-                    itemCount: Xiaomihome.length,
+                    itemCount: Lenovahome.length,
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2, childAspectRatio: 0.8),
+                        crossAxisCount: 2, childAspectRatio:0.8),
                     itemBuilder: (context, index) {
-                      var xiaomi= Xiaomihome[index];
+                      var iphone= Lenovahome[index];
                       return ItemTile(
-                        ItemName: xiaomi.name,
-                        ItemPrice: "${xiaomi.price}",
-                        ImagePath: xiaomi.image,
+                        ItemName: iphone.name,
+                        ItemPrice: "${iphone.price}",
+                        ImagePath: iphone.image,
                         color: Colors.green,
                         onPressed: () {
                           Provider.of<GadgetCartProvider>(context, listen: false)
-                              .addToCart(xiaomi);
+                              .addToCart(iphone);
                         },
                       );
                     })

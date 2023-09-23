@@ -15,19 +15,19 @@ class IntroPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 80,left: 40,right: 40,bottom: 40),
                 child: Image.asset(
-                  "assets/mobileshopelogo.jpg",
+                  "assets/Logo/Gadgetslogo.jpg",
                   height: 200,
                   width: 200,
                 ),
               ),
-              Text("Mobile Online\n Store",
+              Text("Gadgets Online\n Store",
                 textAlign: TextAlign.center,
                 style:
                 TextStyle(fontSize: 40,fontWeight: FontWeight.bold, ),),
               SizedBox(
                 height: 10,
               ),
-              Text("Best Android and IOS phones",
+              Text("Best Gadgets is hear",
                 textAlign: TextAlign.center,
                 style:
                 TextStyle(fontSize: 15,fontWeight: FontWeight.bold, ),),

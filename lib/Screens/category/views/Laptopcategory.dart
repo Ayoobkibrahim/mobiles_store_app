@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../Iphones.dart';
-import '../../Samsung.dart';
-import '../../Vivo.dart';
-import '../../Xiomi.dart';
+import 'package:mobiles_store_app/Screens/ASSUS.dart';
+import 'package:mobiles_store_app/Screens/DELL.dart';
+import 'package:mobiles_store_app/Screens/HP.dart';
+import 'package:mobiles_store_app/Screens/LENOVA.dart';
+import 'package:mobiles_store_app/Screens/SAMSUNGTV.dart';
+
 import '../widgets/CategoryPage.dart';
 
-class Category extends StatelessWidget {
-  const Category({Key? key}) : super(key: key);
+class laptopCategory extends StatelessWidget {
+  const laptopCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class Category extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                      " Best phones for you",
+                      " Best Laptop for you",
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
@@ -39,7 +41,7 @@ class Category extends StatelessWidget {
                       thickness: 4,
                     ),
                     const Text(
-                      "Categories",
+                      "Laptop Categories",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -54,48 +56,48 @@ class Category extends StatelessWidget {
                               crossAxisCount: 2,childAspectRatio: .7),
                           children: [
                             CategoryItemTile(
-                              CategoryName: "IPHONE",
-                              ImagePath: "assets/Iphone.png",
+                              CategoryName: "ASSUS",
+                              ImagePath: "assets/Logo/Assus.png",
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return IphoneItems();
+                                    return AssusItems();
                                   },
                                 ));
                               },
                               color: Colors.green,
                             ),
                             CategoryItemTile(
-                              CategoryName: "SAMSUNG",
-                              ImagePath: "assets/Samsung.png",
+                              CategoryName: "DELL",
+                              ImagePath: "assets/Logo/Dell.png",
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return SamsungItems();
+                                    return DellItems();
                                   },
                                 ));
                               },
                               color: Colors.green,
                             ),
                             CategoryItemTile(
-                              CategoryName: "VIVO",
-                              ImagePath: "assets/Vivo.png",
+                              CategoryName: "LENOVA",
+                              ImagePath: "assets/Logo/Lenova.png",
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return VivoItems();
+                                    return LenovaItems();
                                   },
                                 ));
                               },
                               color: Colors.green,
                             ),
                             CategoryItemTile(
-                              CategoryName: "XIAOMI",
-                              ImagePath: "assets/Xiaomi.png",
+                              CategoryName: "HP",
+                              ImagePath: "assets/Logo/hp.png",
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return XiaomiItems();
+                                    return HpItems();
                                   },
                                 ));
                               },

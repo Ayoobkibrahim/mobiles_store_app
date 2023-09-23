@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobiles_store_app/Screens/category/views/Gadgets%20Category.dart';
 import 'package:mobiles_store_app/Screens/signup.dart';
 
-import 'category/views/category item.dart';
+import 'category/views/Phonecategory item.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -95,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Category()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => GadgetsCategory()));
                 },
                 child: Text("Login"),
                 style: ElevatedButton.styleFrom(

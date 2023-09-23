@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobiles_store_app/Card/PhoneCard.dart';
 import 'package:provider/provider.dart';
-
-import '../Provider/Cart provider.dart';
+import '../Provider/Gadgets Cart Provider.dart';
 import '../components/main title.dart';
-import 'card.dart';
 
 
 class IphoneItems extends StatelessWidget {
@@ -12,8 +11,8 @@ class IphoneItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var Iphonehome = context.watch<CartProvider>().Iphonehome;
-    var Iphonecart = context.watch<CartProvider>().cartall;
+    var Iphonehome = context.watch<GadgetCartProvider>().Iphonehome;
+    var Iphonecart = context.watch<GadgetCartProvider>().cartall;
 
     return SafeArea(
       child: Scaffold(
@@ -26,7 +25,7 @@ class IphoneItems extends StatelessWidget {
           backgroundColor: Colors.black,
           onPressed: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return CartPage();
+              return PhoneCartPage();
             },
           )),
           child:  Wrap(
@@ -47,7 +46,7 @@ class IphoneItems extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "IPHONES",
+                  "APPLE PHONES",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -67,7 +66,7 @@ class IphoneItems extends StatelessWidget {
                         ImagePath: iphone.image,
                         color: Colors.green,
                         onPressed: () {
-                          Provider.of<CartProvider>(context, listen: false)
+                          Provider.of<GadgetCartProvider>(context, listen: false)
                               .addToCart(iphone);
                         },
                       );

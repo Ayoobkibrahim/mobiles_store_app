@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../Provider/Cart provider.dart';
+import '../Provider/Gadgets Cart Provider.dart';
 
-class CartPage extends StatelessWidget {
-  const CartPage({Key? key}) : super(key: key);
+
+
+
+class laptopCartPage extends StatelessWidget {
+  const laptopCartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var carthome = context.watch<CartProvider>().cartall;
+    var carthome = context.watch<GadgetCartProvider>().cartall;
     num totalAmount = 0;
     for (var item in carthome) {
       totalAmount += (item.price * item.count);
@@ -59,7 +62,7 @@ class CartPage extends StatelessWidget {
                             children : [
                               Text(item.count.toString()),
                               IconButton(
-                                onPressed: () => Provider.of<CartProvider>(context, listen: false).removeFromCart(item),
+                                onPressed: () => Provider.of<GadgetCartProvider>(context, listen: false).removeFromCart(item),
                                 icon: Icon(Icons.delete_outline),
                               ),
                             ]

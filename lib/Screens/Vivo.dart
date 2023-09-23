@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../Provider/Cart provider.dart';
+import '../Provider/Gadgets Cart Provider.dart';
 import '../components/main title.dart';
-import 'Card.dart';
+import '../Card/PhoneCard.dart';
 
 
 class VivoItems extends StatelessWidget {
@@ -12,8 +11,8 @@ class VivoItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var Vivohome = context.watch<CartProvider>().Vivohome;
-    var Vivocart = context.watch<CartProvider>().cartall;
+    var Vivohome = context.watch<GadgetCartProvider>().Vivohome;
+    var Vivocart = context.watch<GadgetCartProvider>().cartall;
 
     return SafeArea(
       child: Scaffold(
@@ -26,7 +25,7 @@ class VivoItems extends StatelessWidget {
           backgroundColor: Colors.black,
           onPressed: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return CartPage();
+              return PhoneCartPage();
             },
           )),
           child:  Wrap(
@@ -47,7 +46,7 @@ class VivoItems extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "VIVO",
+                  "VIVO PHONES",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -67,7 +66,7 @@ class VivoItems extends StatelessWidget {
                         ImagePath: vivo.image,
                         color: Colors.green,
                         onPressed: () {
-                          Provider.of<CartProvider>(context, listen: false)
+                          Provider.of<GadgetCartProvider>(context, listen: false)
                               .addToCart(vivo);
                         },
                       );
