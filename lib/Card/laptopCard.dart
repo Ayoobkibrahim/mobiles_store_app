@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Provider/Gadgets Cart Provider.dart';
 
-
-
-
 class laptopCartPage extends StatelessWidget {
   const laptopCartPage({Key? key}) : super(key: key);
 
@@ -57,7 +54,7 @@ class laptopCartPage extends StatelessWidget {
                           backgroundImage: AssetImage(item.image),
                         ),
                         title: Text(item.name),
-                        subtitle: Text('₹ ${item.price}\Kg'),
+                        subtitle: Text('₹ ${item.price}'),
                         trailing: Wrap(
                             children : [
                               Text(item.count.toString()),
